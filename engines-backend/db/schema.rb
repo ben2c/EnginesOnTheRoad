@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 2021_06_17_205136) do
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "car_id"
+    t.bigint "car_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_reviews_on_car_id"
   end
 
 end

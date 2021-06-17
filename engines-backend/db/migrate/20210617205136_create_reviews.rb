@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
     create_table :reviews do |t|
       t.string :title
       t.text :content
-      t.integer :car_id
+      t.references :car
 
       t.timestamps
     end
