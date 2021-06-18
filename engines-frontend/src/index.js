@@ -1,3 +1,5 @@
+const carsURL = 'http://localhost:3000/cars'
+
 document.addEventListener('DOMContentLoaded', () => {
   const endPoint = 'http://localhost:3000/cars';
   fetch(endPoint)
