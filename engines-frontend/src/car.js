@@ -13,16 +13,20 @@ class Car {
 
     Car.allCars.push(this)
     this.renderCar()
+
   }
 
   static renderCars(car) {
+
     carList.innerHTML = ""
     for (let car of cars) {
       car.renderCar()
     }
+
   }
 
   static fetchCars() {
+
     fetch(carsURL)
       .then(response => response.json())
       .then(cars => {
@@ -30,9 +34,11 @@ class Car {
           let newCarList = new Car(car)
         }
       })
+
   }
   
   static submitCar(car) {
+
     car.preventDefault()
     fetch(carsURL, {
       method: "POST",
@@ -63,6 +69,7 @@ class Car {
       method: "DELETE"
     })
     this.parentElement.remove()
+
   }
 
   renderCar() {
@@ -107,6 +114,7 @@ class Car {
       newReview.renderReview(reviewList)
     })
     reviewLi.append(h3, img, reviewList, reviewForm, p, deleteBtn)
+  
   }
 }
 
