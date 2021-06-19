@@ -68,4 +68,14 @@ class Review {
     reviewList.appendChild(li)
 
   }
+
+  deleteReview() {
+
+    const reviewId = this.parentElement.dataset.id
+    fetch(`${reviewsURL}/${reviewId}`, {
+      method: "DELETE"
+    })
+
+    this.parentElement.remove()
+  }
 }

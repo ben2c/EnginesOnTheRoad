@@ -10,6 +10,7 @@ class Car {
     this.year = car.attributes.year
     this.trim = car.attributes.trim
     this.image_url = car.attributes.image_url
+    this.review = car.attributes.review
 
     Car.allCars.push(this)
     this.renderCar()
@@ -51,7 +52,8 @@ class Car {
         model: modelInput.value,
         year: yearInput.value,
         trim: trimInput.value,
-        image: imageInput.value
+        image: imageInput.value,
+        review: reviewsInput.value
       })
     })
       .then(response => response.json())
@@ -86,7 +88,7 @@ class Car {
     img.width = 200
     const p = document.createElement('p')
     p.className = "card-text"
-    p.innerText = this.instructions
+    p.innerText = this.review
 
     //delete button
     const deleteBtn = document.createElement("button")
