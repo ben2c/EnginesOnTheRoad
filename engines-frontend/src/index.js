@@ -7,12 +7,13 @@ const modelInput = document.getElementById("input-model")
 const yearInput = document.getElementById("input-year")
 const trimInput = document.getElementById("input-trim")
 const imageInput = document.getElementById("input-image_url")
-const reviewsInput = document.getElementById("input-reviews")
+//const reviewsInput = document.getElementById("input-reviews")
 const carList = document.getElementById("car-list")
+const searchBar = document.getElementById("searchBar")
 
 
 
-part.addEventListener("DOMContentLoaded", function (x) {
+part.addEventListener("change", function (x) {
   let arr = Car.allCars.filter(car => {
     for (let view of car.reviews) {
       if (view.make.toLowerCase().includes(x.target.value)) {
@@ -23,3 +24,20 @@ part.addEventListener("DOMContentLoaded", function (x) {
 
   Car.renderCars(arr)
 })
+
+searchBar.addEventListener("keyup", function (x) {
+  const searchInput = x.target.value.toLowerCase()
+  const searchResult = Car.allCars.filter(car => {
+
+    if (car.make.toLowerCase().includes(searchInput)) {
+      return true
+
+    }
+  })
+
+  Car.renderCars(searchResult)
+})
+
+carForm.addEventListener("submit", Car.submitCar)
+
+Car.fetchCars()

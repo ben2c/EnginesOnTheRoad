@@ -16,41 +16,53 @@
     <h1 class="display-3">Reviews</h1>
   
     <hr class="my-4">
+    <p class="lead">Create A New Car</p>
     <p class="lead">
-  
-    <form id="cocktail-form">
-      <fieldset>
-        <div class="form-group">
-          <label for='car-make'>Make</label><br>
-          <input type='text' class='form-control' name='make' id='input-make'><br>
-        </div>
-        <div class="form-group">
-          <label for='car-model'>Model</label><br>
-          <input type='text' class='form-control' name='model' id='input-model'><br>
-        </div>
-        <div class="form-group">
-          <label for='car-year'>Year</label><br>
-          <input type='text' class='form-control' name='year' id='input-year'><br>
-        </div>
-        <div class="form-group">
-          <label for='car-trim'>Trim</label><br>
-          <input type='text' class='form-control' name='trim' id='input-trim'><br>
-        </div>
-        <div class="form-group">
-          <label for='car-image'>Image URL</label><br>
-          <input type='text' class='form-control' name='image' id='input-image_url'><br>
-        </div>
-        <div class="form-group">
-          <label for="reviews">Review</label><br>
-          <textarea class="form-control" id="input-reviews" rows="3"></textarea>
-        </div>
-        <input type="submit" class="btn btn-primary btn-lg" value="Submit Car">
-      </fieldset>
-    </form><br>
+      <form id="car-form">
+        <fieldset>
+          <div class="form-group">
+            <label for='car-make'>Make</label><br>
+            <input type='text' class='form-control' id='input-make'><br>
+          </div>
+          <div class="form-group">
+            <label for='car-model'>Model</label><br>
+            <input type='text' class='form-control' id='input-model'><br>
+          </div>
+          <div class="form-group">
+            <label for='car-year'>Year</label><br>
+            <input type='text' class='form-control' id='input-year'><br>
+          </div>
+          <div class="form-group">
+            <label for='car-trim'>Trim</label><br>
+            <input type='text' class='form-control' id='input-trim'><br>
+          </div>
+          <div class="form-group">
+            <label for='car-image'>Image URL</label><br>
+            <input type='text' class='form-control' id='input-image_url'><br>
+          </div>
+          <!-- <div class="form-group">
+            <label for="reviews">Review</label><br>
+            <textarea class="form-control" id="input-reviews" rows="3"></textarea>
+          </div> -->
+          <input type="submit" class="btn btn-primary btn-lg" value="Submit Car">
+        </fieldset>
+      </form><br>
+    </p>
   </div>
-  </p>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="searchBar" placeholder="Search By Make">
   </div>
-  
+  <div class="nav nav-pills flex-column">
+    <select class="form-control" name="" id="part">
+      <option class="dropdown-item" value="">Search By Make</option>
+      <option value="toyota">Toyota</option>
+      <option value="ford">Ford</option>
+      <option value="honda">Honda</option>
+    </select>
+  </div>
+
+  <div class="card mb-3">
     <ul id="car-list" class="wrapper">
   
     </ul>
