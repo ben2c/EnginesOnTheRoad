@@ -10,6 +10,7 @@ class Car {
     this.year = car.attributes.year
     this.trim = car.attributes.trim
     this.image_url = car.attributes.image_url
+    this.reviews = car.attributes.reviews
 
     Car.allCars.push(this)
     this.renderCar()
@@ -34,41 +35,6 @@ class Car {
         let newCarList = new Car(car)
       }
     })
-
-  }
-  
-  static submitCar(x) {
-
-    x.preventDefault()
-    fetch(carsURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        make: makeInput.value,
-        model: modelInput.value,
-        year: yearInput.value,
-        trim: trimInput.value,
-        image: imageInput.value,
-      })
-    })
-      .then(response => response.json())
-      .then(car => {
-        let newCar = new Car(car.data)
-        carForm.reset()
-      })
-  }
-
-  deleteCar() {
-
-    const carId = this.parentElement.dataset.id
-
-    fetch(`${carsURL}/${carId}`, {
-      method: "DELETE"
-    })
-    this.parentElement.remove()
 
   }
 
@@ -106,7 +72,7 @@ class Car {
     const reviewList = document.createElement("ul")
     reviewList.className = "list-group list-group-flush"
     reviewList.dataset.id = this.id
-    
+
     //rendering each review for a car
     this.reviews.forEach(review => {
 
@@ -115,7 +81,43 @@ class Car {
       newReview.renderReview(reviewList)
     })
     reviewLi.append(h3, img, reviewList, reviewForm, p, deleteBtn)
-  
+
   }
+
+  static submitCar(x) {
+
+    x.preventDefault()
+    fetch(carsURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        make: makeInput.value,
+        model: modelInput.value,
+        year: yearInput.value,
+        trim: trimInput.value,
+        image_url: imageInput.value
+      })
+    })
+      .then(response => response.json())
+      .then(car => {
+        let newCar = new Car(car.data)
+        carForm.reset()
+      })
+  }
+
+  deleteCar() {
+
+    const carId = this.parentElement.dataset.id
+
+    fetch(`${carsURL}/${carId}`, {
+      method: "DELETE"
+    })
+    this.parentElement.remove()
+
+  }
+
 }
 

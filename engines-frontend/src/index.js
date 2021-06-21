@@ -7,7 +7,6 @@ const modelInput = document.getElementById("input-model")
 const yearInput = document.getElementById("input-year")
 const trimInput = document.getElementById("input-trim")
 const imageInput = document.getElementById("input-image_url")
-//const reviewsInput = document.getElementById("input-reviews")
 const carList = document.getElementById("car-list")
 const searchBar = document.getElementById("searchBar")
 
