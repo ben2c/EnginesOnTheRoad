@@ -49,7 +49,7 @@ class Car {
     h3.className = ("card-header")
     h3.innerText = this.make
     const img = document.createElement('img')
-    img.src = this.image
+    img.src = this.image_url
     img.width = 200
     const p = document.createElement('p')
     p.className = "card-text"
@@ -80,7 +80,7 @@ class Car {
 
       newReview.renderReview(reviewList)
     })
-    reviewLi.append(h3, img, reviewList, reviewForm, p, deleteBtn)
+    carLi.append(h3, img, reviewList, reviewForm, p, deleteBtn)
 
   }
 

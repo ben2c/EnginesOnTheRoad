@@ -22,34 +22,6 @@ class Review {
 
   }
 
-  static submitReview(reviewTitle, reviewList, carId) {
-
-    fetch(reviewsURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        title: reviewTitle,
-        carId: carId,
-        reviewList: reviewList
-      })
-    })
-      .then(response => response.json())
-      .then(review => {
-
-        let newReview = new Review(review)
-
-        const review = Review.allReviews.find(c => parseInt(c.id) === newReview.car_id)
-        car.reviews.push(newReview)
-
-        newReview.renderReview(reviewList)
-
-      })
-
-  }
-
   renderReview(reviewList) {
 
     const li = document.createElement('li')
@@ -67,6 +39,34 @@ class Review {
     deleteBtn.addEventListener("click", this.deleteReview)
     reviewList.appendChild(li)
 
+  }
+
+  static submitReview(reviewTitle, reviewList, reviewContent, carId) {
+
+    fetch(reviewsURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        title: reviewTitle,
+        car_id: carId,
+        content: reviewContent,
+        reviewList: reviewList
+      })
+    })
+      .then(response => response.json())
+      .then(review => {
+
+        let newReview = new Review(review)
+
+        const car = Review.allReviews.find(c => parseInt(c.id) === newReview.car_id)
+        car.reviews.push(newReview)
+
+        newReview.renderReview(reviewList)
+
+      })
   }
 
   deleteReview() {
