@@ -47,13 +47,13 @@ class Car {
     carList.appendChild(carLi)
     const h3 = document.createElement('h3')
     h3.className = ("card-header")
-    h3.innerText = this.make
+    h3.innerText = this.make + " " + this.model + " " + this.year
+    const p = document.createElement('p')
+    p.className = "card-text"
+    p.innerText = this.trim
     const img = document.createElement('img')
     img.src = this.image_url
     img.width = 200
-    const p = document.createElement('p')
-    p.className = "card-text"
-    p.innerText = this.model
 
     //delete button
     const deleteBtn = document.createElement("button")
@@ -63,14 +63,16 @@ class Car {
 
     //review form
     const reviewForm = document.createElement('form')
-    reviewForm.innerHTML += `<input type="text"  class="form-control" id="review-input" placeholder ="Review">
-        <input type="submit" class="btn btn-primary btn-sm" value="Add">`
+    reviewForm.innerHTML += `
+        <input type="text"  class="form-control" id="review-input" placeholder ="Title">
+        <input type="text"  class="form-control" id="content-input" placeholder ="Content">
+        <input type="submit" class="btn btn-primary btn-sm" value="Add Review">`
 
 
     reviewForm.addEventListener("submit", Review.createReview)
 
     const reviewList = document.createElement("ul")
-    reviewList.className = "list-group list-group-flush"
+    reviewList.className = "review-list-group"
     reviewList.dataset.id = this.id
 
     //rendering each review for a car
@@ -80,7 +82,7 @@ class Car {
 
       newReview.renderReview(reviewList)
     })
-    carLi.append(h3, img, reviewList, reviewForm, p, deleteBtn)
+    carLi.append(h3, p, img, reviewList, reviewForm, deleteBtn)
 
   }
 
