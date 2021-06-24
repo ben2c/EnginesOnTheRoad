@@ -5,4 +5,13 @@ body {
 h1 {
   color: navy;
   margin-left: 20px;
+  background-color: white
 }
+
+h1{
+  background-color: white
+}
+
+/*.main-header {
+  background-image: 
+}*/

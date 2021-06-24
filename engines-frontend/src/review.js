@@ -56,8 +56,8 @@ class Review {
       },
       body: JSON.stringify({
         title: reviewTitle,
-        car_id: carId,
         content: reviewContent,
+        car_id: carId,
         reviewList: reviewList
       })
     })

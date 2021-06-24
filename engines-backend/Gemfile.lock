@@ -167,7 +167,7 @@ DEPENDENCIES
   listen (~> 3.2)
   puma (~> 4.1)
   rack-cors
-  rails (~> 6.0.4)
+  rails (~> 6.0.3, >= 6.0.3.7)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)

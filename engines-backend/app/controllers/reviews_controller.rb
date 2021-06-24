@@ -2,27 +2,15 @@ class ReviewsController < ApplicationController
 
   def index
     reviews = Review.all
-    render json: reviews
+    render json: ReviewSerializer.new(reviews)
   end
 
   def create
     review = Review.new(review_params)
       if review.save
-       render json: review
+        render json: ReviewSerializer.new(review), status: :accepted
       else
         render json: {errors: review.errors.full_messages}, status: :unprocessable_entity 
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @review }
-      else
-        format.html { render :edit }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
     end
   end
 

@@ -53,7 +53,7 @@ class Car {
     p.innerText = this.trim
     const img = document.createElement('img')
     img.src = this.image_url
-    img.width = 200
+    img.width = 400
 
     //delete button
     const deleteBtn = document.createElement("button")
