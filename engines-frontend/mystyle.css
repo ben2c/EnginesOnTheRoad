@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-color: white;
 }
 
 h1 {
@@ -15,3 +15,23 @@ h1{
 /*.main-header {
   background-image: 
 }*/
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.background {
+  width: 50px;
+  cursor: pointer;
+  margin: 30px 0;
+}
