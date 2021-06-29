@@ -1,15 +1,36 @@
-body {
-  background-color: white;
+
+* {
+  margin: 1;
+  padding: 1;
+}
+
+html {
+  background-color: rgb(240, 240, 240);
+  color: #4b4848;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 20 px;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
-  color: navy;
+  color: black;
   margin-left: 20px;
-  background-color: white
 }
 
-h1{
-  background-color: white
+.logo {
+  transform: rotate(270deg) translate(370px, -572px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 50;
+  font-weight: 600;
+  color: black;
+
+}
+
+.jumbotron{
+  text-align: center;
+  margin: 0;
+  color: black;
 }
 
 /*.main-header {
@@ -17,21 +38,48 @@ h1{
 }*/
 
 .container {
-  width: 100%;
-  min-height: 100vh;
-  padding-left: 8%;
-  padding-right: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150vh;
+  min-height: 50vh;
   box-sizing: border-box;
   overflow: hidden;
-}
-.navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
+  background: url('images/background.jpg');
+  background-size: cover;
 }
 
 .background {
   width: 50px;
   cursor: pointer;
   margin: 30px 0;
+}
+
+.form-group {
+  text-align: center;
+  font-weight: bold;
+}
+
+.view {
+  text-align: center;
+}
+
+.car-list.wrapper {
+  border: 2px ridge rgba(0,0,0,0.64);
+}
+
+.form-group hr {
+  position: relative;
+  top: 20px;
+  border: none;
+  height: 2px;
+  background: black;
+  margin-bottom: 50px;
+}
+
+.review-list-group p {
+    font-weight: bold;
+}
+
+.list-group-title p {
+    font-weight: normal;
 }

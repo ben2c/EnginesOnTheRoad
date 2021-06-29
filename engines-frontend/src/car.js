@@ -41,7 +41,7 @@ class Car {
   renderCar() {
 
     const carList = document.getElementById("car-list")
-    const carLi = document.createElement('li')
+    const carLi = document.createElement('p')
 
     carLi.dataset.id = this.id
     carList.appendChild(carLi)
@@ -55,6 +55,9 @@ class Car {
     img.src = this.image_url
     img.width = 400
 
+    //borders around each car
+    const ln = document.createElement('hr')
+    
     //delete button
     const deleteBtn = document.createElement("button")
     deleteBtn.className = "btn btn-primary btn-sm"
@@ -82,7 +85,7 @@ class Car {
 
       newReview.renderReview(reviewList)
     })
-    carLi.append(h3, p, img, reviewList, reviewForm, deleteBtn)
+    carLi.append(h3, p, img, reviewList, reviewForm, deleteBtn, ln)
 
   }
 

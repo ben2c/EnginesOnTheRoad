@@ -25,7 +25,7 @@ class Review {
 
   renderReview(reviewList) {
 
-    const li = document.createElement('li')
+    const li = document.createElement('p')
     li.className = "list-group-title"
     li.dataset.id = this.id
     li.innerText = this.title
@@ -33,13 +33,15 @@ class Review {
     p.className = 'content-text'
     p.innerText = this.content
 
+    //borders around each car
+    const reviewLn = document.createElement('hr')
 
     const lnbr = document.createElement('br')
     const deleteBtn = document.createElement('button')
     deleteBtn.className = "badge badge-pill badge-primary"
-    deleteBtn.innerText = "Remove"
+    deleteBtn.innerText = "Remove Review"
 
-    li.append(p, deleteBtn, lnbr)
+    li.append(p, deleteBtn, lnbr, reviewLn)
 
     deleteBtn.addEventListener("click", this.deleteReview)
     reviewList.appendChild(li)
