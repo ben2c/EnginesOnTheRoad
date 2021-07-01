@@ -2,13 +2,15 @@ class ReviewsController < ApplicationController
 
   def index
     reviews = Review.all
-    render json: ReviewSerializer.new(reviews)
+    render json: reviews
+    ##render json: ReviewSerializer.new(reviews)
   end
 
   def create
     review = Review.new(review_params)
       if review.save
-        render json: ReviewSerializer.new(review), status: :accepted
+        render json: review
+        ##render json: ReviewSerializer.new(review), status: :accepted
       else
         render json: {errors: review.errors.full_messages}, status: :unprocessable_entity 
     end

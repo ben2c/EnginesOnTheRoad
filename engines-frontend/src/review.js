@@ -67,12 +67,9 @@ class Review {
       .then(review => {
 
         let newReview = new Review(review)
-
-        const car = Review.allReviews.find(c => parseInt(c.id) === newReview.car_id)
-        car.reviews.push(newReview)
-
         newReview.renderReview(reviewList)
-
+        //const car = Review.allReviews.find(newReview.car_id)
+        //car.reviews.push(newReview)
       })
   }
 

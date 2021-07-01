@@ -11,7 +11,7 @@ const searchBar = document.getElementById("searchBar")
 const rating = document.getElementById("rating")
 
 
-searchBar.addEventListener("keyup", function (x) {
+searchBar.addEventListener("DOMContentLoaded", function (x) {
   const searchInput = x.target.value.toLowerCase()
   const searchResult = Car.allCars.filter(car => {
 
