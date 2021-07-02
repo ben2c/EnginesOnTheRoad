@@ -11,7 +11,7 @@ const searchBar = document.getElementById("searchBar")
 const rating = document.getElementById("rating")
 
 
-searchBar.addEventListener("DOMContentLoaded", function (x) {
+searchBar.addEventListener("keyup", function (x) {
   const searchInput = x.target.value.toLowerCase()
   const searchResult = Car.allCars.filter(car => {
 
@@ -63,4 +63,20 @@ function displayWarning(msg) {
     warningBox.parentNode.removeChild(warningBox);
     warningTimeout = -1;
   }, 2000);
+}
+
+const toggleButton = document.createElement("toggleBtn");
+const toggleBtn = document.getElementById('toggleBtn')
+toggleBtn.addEventListener('click', toggleBackground)
+
+function toggleBackground() {
+
+  if (document.body.style.backgroundColor === "white") {
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = 'white';
+  }
+  else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = 'black';
+  }
 }
